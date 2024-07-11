@@ -11,9 +11,9 @@ extension Animal {
     static var mock: Self {
         .init(title: "Dogs 🐕",
               description: "Different facts about dogs",
-              image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg",
+              image: .init(string:"https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg"),
               order: 2,
-              status: "paid",
+              status: .paid,
               content: nil)
     }
 }

@@ -9,14 +9,18 @@ import Foundation
 
 // MARK: - Animal
 
-struct Animal: Decodable {
+struct Animal {
     let title: String
     let description: String
     let image: URL?
     let order: Int
     let status: Status?
     let content: [FactInfo]?
-    
+}
+
+// MARK: - Animal + Decodable
+
+extension Animal: Decodable {
     enum CodingKeys: String, CodingKey {
         case title
         case description
@@ -50,21 +54,25 @@ extension Animal {
 // MARK: - FactInfo
 
 extension Animal {
-    struct FactInfo: Decodable {
+    struct FactInfo {
         let fact: String
         let image: URL?
+    }
+}
+
+// MARK: - FactInfo + Decodable
+
+extension Animal.FactInfo: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case fact
+        case image
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        enum CodingKeys: String, CodingKey {
-            case fact
-            case image
-        }
-        
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            
-            fact = try container.decode(String.self, forKey: .fact)
-            image = try container.decodeIfPresent(URL.self, forKey: .image)
-        }
+        fact = try container.decode(String.self, forKey: .fact)
+        image = try container.decodeIfPresent(URL.self, forKey: .image)
     }
 }
 

@@ -11,6 +11,16 @@
 		7B5046262C3FE7E400B2873B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046252C3FE7E400B2873B /* ContentView.swift */; };
 		7B5046282C3FE7E500B2873B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5046272C3FE7E500B2873B /* Assets.xcassets */; };
 		7B50462B2C3FE7E500B2873B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B50462A2C3FE7E500B2873B /* Preview Assets.xcassets */; };
+		7B5046342C3FED7600B2873B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7B5046332C3FED7600B2873B /* ComposableArchitecture */; };
+		7B5046372C3FEDAA00B2873B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046362C3FEDAA00B2873B /* NetworkManager.swift */; };
+		7B50463A2C3FF32E00B2873B /* AnimalsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046392C3FF32E00B2873B /* AnimalsNetworkService.swift */; };
+		7B50463D2C3FF36700B2873B /* DependencyValues+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50463C2C3FF36700B2873B /* DependencyValues+Extension.swift */; };
+		7B5046402C3FF48300B2873B /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50463F2C3FF48300B2873B /* Animal.swift */; };
+		7B5046452C404FF600B2873B /* AnimalsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046442C404FF600B2873B /* AnimalsListView.swift */; };
+		7B5046472C40503C00B2873B /* AnimalItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046462C40503C00B2873B /* AnimalItemView.swift */; };
+		7B5046492C40505800B2873B /* Animal+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046482C40505800B2873B /* Animal+Mock.swift */; };
+		7B50464C2C40514700B2873B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7B50464B2C40514700B2873B /* Kingfisher */; };
+		7B50464F2C40644500B2873B /* AnimalsListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50464E2C40644500B2873B /* AnimalsListFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,14 @@
 		7B5046252C3FE7E400B2873B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B5046272C3FE7E500B2873B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B50462A2C3FE7E500B2873B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7B5046362C3FEDAA00B2873B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7B5046392C3FF32E00B2873B /* AnimalsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsNetworkService.swift; sourceTree = "<group>"; };
+		7B50463C2C3FF36700B2873B /* DependencyValues+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+Extension.swift"; sourceTree = "<group>"; };
+		7B50463F2C3FF48300B2873B /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		7B5046442C404FF600B2873B /* AnimalsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListView.swift; sourceTree = "<group>"; };
+		7B5046462C40503C00B2873B /* AnimalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalItemView.swift; sourceTree = "<group>"; };
+		7B5046482C40505800B2873B /* Animal+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+Mock.swift"; sourceTree = "<group>"; };
+		7B50464E2C40644500B2873B /* AnimalsListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B50464C2C40514700B2873B /* Kingfisher in Frameworks */,
+				7B5046342C3FED7600B2873B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +71,9 @@
 		7B5046222C3FE7E400B2873B /* AnimalExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7B5046412C404FD600B2873B /* Screens */,
+				7B50463B2C3FF33B00B2873B /* DI */,
+				7B5046312C3FE9AA00B2873B /* Networking */,
 				7B5046232C3FE7E400B2873B /* AnimalExplorerApp.swift */,
 				7B5046252C3FE7E400B2873B /* ContentView.swift */,
 				7B5046272C3FE7E500B2873B /* Assets.xcassets */,
@@ -65,6 +88,83 @@
 				7B50462A2C3FE7E500B2873B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7B5046312C3FE9AA00B2873B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7B5046382C3FF31600B2873B /* Service */,
+				7B5046352C3FEDA100B2873B /* Manager */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7B5046352C3FEDA100B2873B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7B5046362C3FEDAA00B2873B /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7B5046382C3FF31600B2873B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7B50463E2C3FF47D00B2873B /* Model */,
+				7B5046392C3FF32E00B2873B /* AnimalsNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7B50463B2C3FF33B00B2873B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7B50463C2C3FF36700B2873B /* DependencyValues+Extension.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		7B50463E2C3FF47D00B2873B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B50463F2C3FF48300B2873B /* Animal.swift */,
+				7B5046482C40505800B2873B /* Animal+Mock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B5046412C404FD600B2873B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7B5046422C404FE300B2873B /* AnimalsList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7B5046422C404FE300B2873B /* AnimalsList */ = {
+			isa = PBXGroup;
+			children = (
+				7B50464D2C40641700B2873B /* Store */,
+				7B5046432C404FEA00B2873B /* View */,
+				7B5046442C404FF600B2873B /* AnimalsListView.swift */,
+			);
+			path = AnimalsList;
+			sourceTree = "<group>";
+		};
+		7B5046432C404FEA00B2873B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B5046462C40503C00B2873B /* AnimalItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B50464D2C40641700B2873B /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				7B50464E2C40644500B2873B /* AnimalsListFeature.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +183,10 @@
 			dependencies = (
 			);
 			name = AnimalExplorer;
+			packageProductDependencies = (
+				7B5046332C3FED7600B2873B /* ComposableArchitecture */,
+				7B50464B2C40514700B2873B /* Kingfisher */,
+			);
 			productName = AnimalExplorer;
 			productReference = 7B5046202C3FE7E400B2873B /* AnimalExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +215,10 @@
 				Base,
 			);
 			mainGroup = 7B5046172C3FE7E400B2873B;
+			packageReferences = (
+				7B5046322C3FED7600B2873B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				7B50464A2C40514700B2873B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 7B5046212C3FE7E400B2873B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +245,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B50464F2C40644500B2873B /* AnimalsListFeature.swift in Sources */,
+				7B5046452C404FF600B2873B /* AnimalsListView.swift in Sources */,
+				7B5046372C3FEDAA00B2873B /* NetworkManager.swift in Sources */,
+				7B50463D2C3FF36700B2873B /* DependencyValues+Extension.swift in Sources */,
+				7B5046492C40505800B2873B /* Animal+Mock.swift in Sources */,
+				7B5046472C40503C00B2873B /* AnimalItemView.swift in Sources */,
 				7B5046262C3FE7E400B2873B /* ContentView.swift in Sources */,
+				7B50463A2C3FF32E00B2873B /* AnimalsNetworkService.swift in Sources */,
 				7B5046242C3FE7E400B2873B /* AnimalExplorerApp.swift in Sources */,
+				7B5046402C3FF48300B2873B /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +460,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B5046322C3FED7600B2873B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.2;
+			};
+		};
+		7B50464A2C40514700B2873B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B5046332C3FED7600B2873B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B5046322C3FED7600B2873B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		7B50464B2C40514700B2873B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B50464A2C40514700B2873B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7B5046182C3FE7E400B2873B /* Project object */;
 }

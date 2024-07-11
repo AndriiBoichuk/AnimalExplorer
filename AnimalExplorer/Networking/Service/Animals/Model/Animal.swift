@@ -42,6 +42,20 @@ extension Animal: Decodable {
     }
 }
 
+// MARK: - Animal + Equatable
+
+extension Animal: Equatable {
+    static func == (lhs: Animal, rhs: Animal) -> Bool {
+        lhs.order == rhs.order
+    }
+}
+
+// MARK: - Animal + Identifiable
+
+extension Animal: Identifiable {
+    var id: Int { order }
+}
+
 // MARK: - Status
 
 extension Animal {

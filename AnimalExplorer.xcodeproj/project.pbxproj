@@ -21,6 +21,7 @@
 		7B5046492C40505800B2873B /* Animal+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046482C40505800B2873B /* Animal+Mock.swift */; };
 		7B50464C2C40514700B2873B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7B50464B2C40514700B2873B /* Kingfisher */; };
 		7B50464F2C40644500B2873B /* AnimalsListFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50464E2C40644500B2873B /* AnimalsListFeature.swift */; };
+		7B5046522C40705600B2873B /* MockAnimalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5046512C40705600B2873B /* MockAnimalsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		7B5046462C40503C00B2873B /* AnimalItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalItemView.swift; sourceTree = "<group>"; };
 		7B5046482C40505800B2873B /* Animal+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+Mock.swift"; sourceTree = "<group>"; };
 		7B50464E2C40644500B2873B /* AnimalsListFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsListFeature.swift; sourceTree = "<group>"; };
+		7B5046512C40705600B2873B /* MockAnimalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAnimalsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +112,7 @@
 		7B5046382C3FF31600B2873B /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				7B50463E2C3FF47D00B2873B /* Model */,
-				7B5046392C3FF32E00B2873B /* AnimalsNetworkService.swift */,
+				7B5046502C40704300B2873B /* Animals */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -165,6 +166,16 @@
 				7B50464E2C40644500B2873B /* AnimalsListFeature.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		7B5046502C40704300B2873B /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				7B5046392C3FF32E00B2873B /* AnimalsNetworkService.swift */,
+				7B50463E2C3FF47D00B2873B /* Model */,
+				7B5046512C40705600B2873B /* MockAnimalsService.swift */,
+			);
+			path = Animals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				7B50463D2C3FF36700B2873B /* DependencyValues+Extension.swift in Sources */,
 				7B5046492C40505800B2873B /* Animal+Mock.swift in Sources */,
 				7B5046472C40503C00B2873B /* AnimalItemView.swift in Sources */,
+				7B5046522C40705600B2873B /* MockAnimalsService.swift in Sources */,
 				7B5046262C3FE7E400B2873B /* ContentView.swift in Sources */,
 				7B50463A2C3FF32E00B2873B /* AnimalsNetworkService.swift in Sources */,
 				7B5046242C3FE7E400B2873B /* AnimalExplorerApp.swift in Sources */,
@@ -396,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,6 +438,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

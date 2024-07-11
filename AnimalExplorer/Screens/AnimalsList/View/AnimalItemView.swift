@@ -29,11 +29,13 @@ struct AnimalItemView: View {
                 .shadow(radius: 3, y: 3)
         }
         .overlay {
-            ZStack(alignment: .trailing) {
-                Color.aeBlack60
-                Image(.comingSoon)
-                    .resizable()
-                    .scaledToFit()
+            if animal.content != nil {
+                ZStack(alignment: .trailing) {
+                    Color.aeBlack60
+                    Image(.comingSoon)
+                        .resizable()
+                        .scaledToFit()
+                }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadius))

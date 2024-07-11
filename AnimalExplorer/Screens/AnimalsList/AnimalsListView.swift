@@ -6,24 +6,36 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AnimalsListView: View {
+    @Perception.Bindable var store: StoreOf<AnimalsListFeature>
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
+        WithPerceptionTracking {
+            ScrollView {
+                VStack {
+                    if let animals = store.animals {
+                        ForEach(animals) { animal in
+                            AnimalItemView(animal: animal)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .padding()
-        }
-        .background {
-            Color.aeMain.ignoresSafeArea()
+            .background {
+                Color.aeMain.ignoresSafeArea()
+            }
+            .task {
+                await store.send(.loadData).finish()
+            }
         }
     }
 }
 
 #Preview {
-    AnimalsListView()
+    AnimalsListView(store: .init(
+        initialState: AnimalsListFeature.State(),
+        reducer: { AnimalsListFeature() }))
 }

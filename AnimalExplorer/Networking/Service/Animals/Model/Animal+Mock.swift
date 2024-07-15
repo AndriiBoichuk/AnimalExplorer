@@ -16,4 +16,13 @@ extension Animal {
               status: .paid,
               content: nil)
     }
+    
+    static func mock(with order: Int, status: Animal.Status = .paid) -> Self {
+        .init(title: "Dogs 🐕",
+              description: "Different facts about dogs",
+              image: .init(string:"https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg"),
+              order: order,
+              status: status,
+              content: nil)
+    }
 }

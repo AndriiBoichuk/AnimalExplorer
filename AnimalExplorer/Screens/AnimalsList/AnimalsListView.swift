@@ -6,24 +6,54 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AnimalsListView: View {
+    @Perception.Bindable var store: StoreOf<AnimalsListFeature>
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
-                AnimalItemView(animal: .mock)
+        WithPerceptionTracking {
+            ScrollView {
+                VStack {
+                    if let animals = store.animals {
+                        ForEach(animals) { animal in
+                            Button {
+                                store.send(.showAnimalFacts(animal, isAdWatched: false))
+                            } label: {
+                                AnimalItemView(animal: animal)
+                            }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .padding()
-        }
-        .background {
-            Color.aeMain.ignoresSafeArea()
+            .overlay {
+                if store.dataLoadingStatus == .loading {
+                    ProgressView()
+                        .frame(height: 150)
+                }
+            }
+            .background {
+                Color.aeMain.ignoresSafeArea()
+            }
+            .task {
+                store.send(.loadCachedData)
+            }
+            .alert($store.scope(state: \.commingSoonAlert, action: \.commingSoonAlertAction))
+            .alert($store.scope(state: \.adAlert, action: \.adAlertAction))
+            .navigationDestination(item: $store.scope(
+                state: \.animal,
+                action: \.animalFactsAction
+            )) { store in
+                AnimalFactsView(store: store)
+            }
         }
     }
 }
 
 #Preview {
-    AnimalsListView()
+    AnimalsListView(store: .init(
+        initialState: AnimalsListFeature.State(),
+        reducer: { AnimalsListFeature() }))
 }

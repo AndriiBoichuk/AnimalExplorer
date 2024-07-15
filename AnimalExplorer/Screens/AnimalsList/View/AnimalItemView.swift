@@ -29,11 +29,13 @@ struct AnimalItemView: View {
                 .shadow(radius: 3, y: 3)
         }
         .overlay {
-            ZStack(alignment: .trailing) {
-                Color.aeBlack60
-                Image(.comingSoon)
-                    .resizable()
-                    .scaledToFit()
+            if animal.isContentEmpty {
+                ZStack(alignment: .trailing) {
+                    Color.aeBlack60
+                    Image(.comingSoon)
+                        .resizable()
+                        .scaledToFit()
+                }
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: Constant.cornerRadius))
@@ -64,6 +66,11 @@ private extension AnimalItemView {
             static let main: CGFloat = 17
             static let status: CGFloat = 4
         }
+        
+        enum LineLimit {
+            static let title: Int = 1
+            static let subtitle: Int = 2
+        }
     }
 }
 
@@ -82,10 +89,14 @@ private extension AnimalItemView {
     func makeHeaderView(title: String, subtitle: String) -> some View {
         VStack(alignment: .leading) {
             Text(title)
+                .font(.aeTitle)
                 .foregroundStyle(Color.aeBlack)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .lineLimit(Constant.LineLimit.title)
             Text(subtitle)
+                .font(.aeSubtitle)
                 .foregroundStyle(Color.aeBlack50)
+                .lineLimit(Constant.LineLimit.subtitle)
         }
     }
     
@@ -99,6 +110,7 @@ private extension AnimalItemView {
                     .scaledToFit()
                     .frame(height: Constant.Size.lockIconHeight)
                 Text("Premium")
+                    .font(.aeTitle)
                     .foregroundStyle(.aeBlue)
             }
         case .free:

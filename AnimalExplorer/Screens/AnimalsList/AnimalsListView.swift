@@ -17,18 +17,36 @@ struct AnimalsListView: View {
                 VStack {
                     if let animals = store.animals {
                         ForEach(animals) { animal in
-                            AnimalItemView(animal: animal)
+                            Button {
+                                store.send(.showAnimalFacts(animal, isAdWatched: false))
+                            } label: {
+                                AnimalItemView(animal: animal)
+                            }
                         }
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
             }
+            .overlay {
+                if store.dataLoadingStatus == .loading {
+                    ProgressView()
+                        .frame(height: 150)
+                }
+            }
             .background {
                 Color.aeMain.ignoresSafeArea()
             }
             .task {
-                await store.send(.loadData).finish()
+                store.send(.loadCachedData)
+            }
+            .alert($store.scope(state: \.commingSoonAlert, action: \.commingSoonAlertAction))
+            .alert($store.scope(state: \.adAlert, action: \.adAlertAction))
+            .navigationDestination(item: $store.scope(
+                state: \.animal,
+                action: \.animalFactsAction
+            )) { store in
+                AnimalFactsView(store: store)
             }
         }
     }

@@ -7,8 +7,13 @@
 
 import Foundation
 
-class MockAnimalsService: AnimalsNetworkServiceProtocol {
-    func fetchAnimalTypes() async throws -> Animals {
+class MockAnimalsService: AnimalsRepositoryProtocol {
+    func fetchAnimalsFromDB() async throws -> Animals {
+        try await Task.sleep(for: .milliseconds(500))
+        return [.mock, .mock(with: 1), .mock(with: 3, status: .free), .mock(with: 4, status: .free)]
+    }
+    
+    func fetchAnimalsFromNetwork() async throws -> Animals {
         try await Task.sleep(for: .milliseconds(500))
         return [.mock, .mock(with: 1), .mock(with: 3, status: .free), .mock(with: 4, status: .free)]
     }

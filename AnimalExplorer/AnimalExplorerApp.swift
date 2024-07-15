@@ -11,9 +11,8 @@ import SwiftUI
 struct AnimalExplorerApp: App {
     var body: some Scene {
         WindowGroup {
-            AnimalsListView(store: .init(
-                initialState: AnimalsListFeature.State(),
-                reducer: { AnimalsListFeature() }))
+            RootView(store: .init(initialState: RootFeature.State(),
+                                  reducer: { RootFeature() }))
         }
     }
 }

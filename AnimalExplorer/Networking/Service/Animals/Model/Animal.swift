@@ -16,6 +16,10 @@ struct Animal {
     let order: Int
     let status: Status?
     let content: [FactInfo]?
+    
+    var isContentEmpty: Bool {
+        content == nil || content?.isEmpty ?? true
+    }
 }
 
 // MARK: - Animal + Decodable
@@ -88,6 +92,12 @@ extension Animal.FactInfo: Decodable {
         fact = try container.decode(String.self, forKey: .fact)
         image = try container.decodeIfPresent(URL.self, forKey: .image)
     }
+}
+
+// MARK: - FactInfo + Equatable, Identifiable
+
+extension Animal.FactInfo: Equatable, Identifiable, Hashable {
+    var id: String { self.fact }
 }
 
 typealias Animals = [Animal]

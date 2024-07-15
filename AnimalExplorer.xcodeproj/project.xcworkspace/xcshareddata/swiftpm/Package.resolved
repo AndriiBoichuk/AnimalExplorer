@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "coredatalayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndriiBoichuk/CoreDataLayer",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b975b3caa91df60d88c68f9cb0a35f3164ac95cd"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
